@@ -47,7 +47,7 @@ router.post("/", async (req, res) => {
       } else {
         const savedPost = await post.save();
         res.status(200).json({
-          message: `data:{"_id":$(savedPost._id)}`,
+          message: "data:{" + "_id: " + savedPost._id + "}",
         });
       }
     } else {
